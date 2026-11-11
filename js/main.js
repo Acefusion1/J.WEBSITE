@@ -4,12 +4,14 @@ var nav = document.getElementById("site-nav");
 
 function closeMenu() {
   nav.classList.remove("open");
+  document.body.classList.remove("menu-open");
   toggle.setAttribute("aria-expanded", "false");
   toggle.setAttribute("aria-label", "Open menu");
 }
 
 toggle.addEventListener("click", function () {
   var isOpen = nav.classList.toggle("open");
+  document.body.classList.toggle("menu-open", isOpen);
   toggle.setAttribute("aria-expanded", isOpen);
   toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
 });
