@@ -2,10 +2,10 @@
 <html lang="en-ZA">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Umhlanga Jewish Centre | It's all about community</title>
   <meta name="description" content="The Umhlanga Jewish Centre on Izinga Ridge: a Modern Orthodox shul, day school, mikveh and community centre north of Durban. Service times, Shabbat times, events and donations.">
-  <meta name="theme-color" content="#102A43">
+  <meta name="theme-color" content="#F4F7F7">
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -160,22 +160,22 @@
 
         <div class="campus-list">
           <article class="campus-item">
-            <img src="images/campus-shul.jpg" alt="Inside the UJC shul" class="campus-photo" loading="lazy" onerror="this.style.display='none'">
+            <div class="photo-frame"><img src="images/campus-shul.jpg" alt="Inside the UJC shul" class="campus-photo" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
             <h3>The shul</h3>
             <p>Daily minyanim, Shabbat and Yom Tov services, bar and bat mitzvahs, and a kiddush most weeks.</p>
           </article>
           <article class="campus-item">
-            <img src="images/campus-school.jpg" alt="Umhlanga Jewish Day School" class="campus-photo" loading="lazy" onerror="this.style.display='none'">
+            <div class="photo-frame"><img src="images/campus-school.jpg" alt="Umhlanga Jewish Day School" class="campus-photo" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
             <h3>Umhlanga Jewish Day School</h3>
             <p>A primary school offering a warm, holistic Jewish education alongside the national curriculum.</p>
           </article>
           <article class="campus-item">
-            <img src="images/campus-mikveh.jpg" alt="Leah Masinter Mikveh" class="campus-photo" loading="lazy" onerror="this.style.display='none'">
+            <div class="photo-frame"><img src="images/campus-mikveh.jpg" alt="Leah Masinter Mikveh" class="campus-photo" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
             <h3>Leah Masinter Mikveh</h3>
             <p>Private appointments by arrangement. Phone the mikveh line on <a href="tel:+27823252821">082 325 2821</a>.</p>
           </article>
           <article class="campus-item">
-            <img src="images/campus-library.jpg" alt="The Beit Midrash and library" class="campus-photo" loading="lazy" onerror="this.style.display='none'">
+            <div class="photo-frame"><img src="images/campus-library.jpg" alt="The Beit Midrash and library" class="campus-photo" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
             <h3>Beit Midrash &amp; library</h3>
             <p>A quiet space for shiurim, chavruta learning and the Walter and Lilly Wellisch library.</p>
           </article>
@@ -270,11 +270,14 @@
       <div class="container contact-grid">
         <div>
           <h2>Visit us</h2>
-          <address>
-            81 Campbell Drive<br>
-            Izinga Ridge, Umhlanga Ridge<br>
-            4319
+          <address class="address-big">
+            81 Campbell Drive
+            <span>Izinga Ridge, Umhlanga Ridge, 4319</span>
           </address>
+          <div class="contact-actions">
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=81+Campbell+Drive,+Izinga+Ridge,+Umhlanga" class="btn btn-gold" target="_blank" rel="noopener">Get directions</a>
+            <a href="tel:+27315663227" class="btn btn-ghost">Call the office</a>
+          </div>
           <ul class="contact-list">
             <li><span>Office</span> <a href="tel:+27315663227">031 566 3227</a></li>
             <li><span>Mikveh</span> <a href="tel:+27823252821">082 325 2821</a></li>
@@ -344,6 +347,12 @@
       <p><a href="#top">Back to top &uarr;</a></p>
     </div>
   </footer>
+
+  <!-- Sticky call / directions bar, phones only -->
+  <nav class="action-bar" aria-label="Quick actions">
+    <a href="tel:+27315663227" class="action-call">Call the office</a>
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=81+Campbell+Drive,+Izinga+Ridge,+Umhlanga" class="action-directions" target="_blank" rel="noopener">Directions</a>
+  </nav>
 
   <script src="js/main.js"></script>
 </body>
