@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umhlanga Jewish Centre | It's all about community</title>
+  <meta name="description" content="The Umhlanga Jewish Centre on Izinga Ridge: a Modern Orthodox shul, day school, mikveh and community centre north of Durban. Service times, Shabbat times, events and donations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <img src="images/logo.png" alt="Umhlanga Jewish Centre" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="brand-text">Umhlanga Jewish Centre</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+      <nav id="site-nav" class="site-nav">
+        <a href="#times">Service times</a>
+        <a href="#about">About</a>
+        <a href="#campus">On campus</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Visit us</a>
+        <a href="#donate" class="btn btn-gold btn-small">Donate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-hebrew" lang="he" dir="rtl">שָׁלוֹם</p>
+          <h1>A shul, a school and a home on the Umhlanga ridge.</h1>
+          <p class="hero-lead">The Umhlanga Jewish Centre is a Modern Orthodox community on Izinga Ridge, north of Durban. Locals, families and holidaymakers are all welcome, whether it's your first Shabbat with us or your hundredth.</p>
+          <div class="hero-actions">
+            <a href="#times" class="btn btn-gold">See service times</a>
+            <a href="#contact" class="btn btn-ghost">Plan your visit</a>
+          </div>
+        </div>
+
+        <!-- Live Shabbat card: filled in by js/main.js from Hebcal -->
+        <aside class="shabbat-card" aria-live="polite">
+          <p class="shabbat-label">This Shabbat in Umhlanga</p>
+          <p class="shabbat-parsha" id="parsha">Loading…</p>
+          <p class="shabbat-hebdate" id="hebdate" lang="he" dir="rtl"></p>
+
+          <div class="shabbat-row">
+            <span>Candle lighting</span>
+            <strong id="candles">--:--</strong>
+          </div>
+          <div class="shabbat-row">
+            <span>Shabbat ends</span>
+            <strong id="havdalah">--:--</strong>
+          </div>
+          <p class="shabbat-date" id="shabbat-date"></p>
+          <p class="shabbat-note">Times for Umhlanga Ridge, from Hebcal.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== SERVICE TIMES ===== -->
+    <!-- TODO: confirm every time below with the UJC office before going live -->
+    <section class="section" id="times">
+      <div class="container">
+        <h2>Service times</h2>
+        <p class="section-lead">Weekday and Shabbat davening at the UJC shul. Festival times are sent out in the weekly newsletter.</p>
+
+        <div class="times-grid">
+          <div class="times-block">
+            <h3>Shabbat</h3>
+            <table class="times-table">
+              <tr><td>Friday Mincha &amp; Kabbalat Shabbat</td><td>At candle lighting</td></tr>
+              <tr><td>Shabbat morning Shacharit</td><td>08:30</td></tr>
+              <tr><td>Kiddush</td><td>After the service</td></tr>
+              <tr><td>Mincha, Seuda Shlishit &amp; Maariv</td><td>See newsletter</td></tr>
+            </table>
+          </div>
+
+          <div class="times-block">
+            <h3>Weekdays</h3>
+            <table class="times-table">
+              <tr><td>Sunday Shacharit</td><td>08:00</td></tr>
+              <tr><td>Monday &amp; Thursday Shacharit</td><td>06:45</td></tr>
+              <tr><td>Other weekdays Shacharit</td><td>07:00</td></tr>
+              <tr><td>Mincha &amp; Maariv</td><td>Sunday to Thursday, 17:30</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <p class="times-help">Need a minyan for a yahrzeit or simcha? Phone the office on <a href="tel:+27315663227">031 566 3227</a>.</p>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section section-ocean" id="about">
+      <div class="container about-grid">
+        <div>
+          <h2>Our story</h2>
+          <p>The UJC was opened in 2014, when families across Durban were moving north to Umhlanga. The idea was simple: bring the essentials of Jewish life onto one campus, so a family could daven, learn, school their children and celebrate together in one place.</p>
+          <p>Today the shul seats up to 350 people, and the centre is busy every day of the week, from early-morning minyan to youth programmes in the afternoon.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>2014</dt><dd>Year the centre opened</dd></div>
+          <div><dt>350</dt><dd>Seats in the shul</dd></div>
+          <div><dt>Nusach Ashkenaz</dt><dd>Modern Orthodox</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== ON CAMPUS ===== -->
+    <section class="section" id="campus">
+      <div class="container">
+        <h2>On campus</h2>
+        <p class="section-lead">Everything sits together at 81 Campbell Drive.</p>
+
+        <div class="campus-list">
+          <article class="campus-item">
+            <h3>The shul</h3>
+            <p>Daily minyanim, Shabbat and Yom Tov services, bar and bat mitzvahs, and a kiddush most weeks.</p>
+          </article>
+          <article class="campus-item">
+            <h3>Umhlanga Jewish Day School</h3>
+            <p>A primary school offering a warm, holistic Jewish education alongside the national curriculum.</p>
+          </article>
+          <article class="campus-item">
+            <h3>Leah Masinter Mikveh</h3>
+            <p>Private appointments by arrangement. Phone the mikveh line on <a href="tel:+27823252821">082 325 2821</a>.</p>
+          </article>
+          <article class="campus-item">
+            <h3>Beit Midrash &amp; library</h3>
+            <p>A quiet space for shiurim, chavruta learning and the Walter and Lilly Wellisch library.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EVENTS ===== -->
+    <!-- TODO: replace these with real upcoming events from Mandy / the newsletter -->
+    <section class="section section-sand" id="events">
+      <div class="container">
+        <h2>Coming up</h2>
+        <div class="events-list">
+          <article class="event">
+            <div class="event-date"><span class="event-day">14</span><span class="event-month">Nov</span></div>
+            <div>
+              <h3>Shabbat kiddush lunch</h3>
+              <p>Stay after the service for lunch with the community. Everyone's welcome.</p>
+            </div>
+          </article>
+          <article class="event">
+            <div class="event-date"><span class="event-day">19</span><span class="event-month">Nov</span></div>
+            <div>
+              <h3>Wednesday night shiur</h3>
+              <p>Weekly learning in the Beit Midrash, 19:30. No experience needed.</p>
+            </div>
+          </article>
+          <article class="event">
+            <div class="event-date"><span class="event-day">23</span><span class="event-month">Nov</span></div>
+            <div>
+              <h3>Sunday youth morning</h3>
+              <p>Games, crafts and a Jewish twist for kids aged 6 to 14.</p>
+            </div>
+          </article>
+        </div>
+        <p class="events-more">Get the weekly newsletter by emailing <a href="mailto:shul@umhlangajewishcentre.co.za">shul@umhlangajewishcentre.co.za</a>.</p>
+      </div>
+    </section>
+
+    <!-- ===== DONATE ===== -->
+    <section class="section" id="donate">
+      <div class="container">
+        <h2>Support the UJC</h2>
+        <p class="section-lead">Your donation keeps the shul, school and mikveh running for the whole KZN community. Choose whichever way suits you.</p>
+
+        <div class="donate-grid">
+          <div class="donate-option">
+            <h3>Zapper</h3>
+            <img src="images/zapper-qr.png" alt="Zapper QR code to donate to the UJC" class="qr" onerror="this.style.display='none'">
+            <p>Scan the code in your banking app, or tap below on your phone.</p>
+            <a href="https://www.zapper.com/url/QQfQaALHHk" class="btn btn-ocean" target="_blank" rel="noopener">Donate with Zapper</a>
+          </div>
+
+          <div class="donate-option">
+            <h3>Card</h3>
+            <p>Pay securely by credit or debit card through Yoco.</p>
+            <a href="https://pay.yoco.com/UmhlangaJewishCentre" class="btn btn-ocean" target="_blank" rel="noopener">Donate by card</a>
+          </div>
+
+          <div class="donate-option">
+            <h3>EFT</h3>
+            <dl class="bank">
+              <div><dt>Bank</dt><dd>ABSA</dd></div>
+              <div><dt>Account name</dt><dd>UJC</dd></div>
+              <div><dt>Account number</dt><dd>4078573039</dd></div>
+              <div><dt>Branch code</dt><dd>630326</dd></div>
+              <div><dt>Reference</dt><dd>Your name and the appeal</dd></div>
+            </dl>
+            <p class="small">Send proof of payment to <a href="mailto:admin@umhlangajewishcentre.co.za">admin@umhlangajewishcentre.co.za</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section section-ocean" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <h2>Visit us</h2>
+          <address>
+            81 Campbell Drive<br>
+            Izinga Ridge, Umhlanga Ridge<br>
+            4319
+          </address>
+          <ul class="contact-list">
+            <li><span>Office</span> <a href="tel:+27315663227">031 566 3227</a></li>
+            <li><span>Mikveh</span> <a href="tel:+27823252821">082 325 2821</a></li>
+            <li><span>Email</span> <a href="mailto:shul@umhlangajewishcentre.co.za">shul@umhlangajewishcentre.co.za</a></li>
+          </ul>
+          <p class="small">Visiting for Shabbat? Let the office know before Thursday and we'll help with meals and a place to stay nearby.</p>
+        </div>
+        <div class="map">
+          <iframe
+            title="Map showing the Umhlanga Jewish Centre"
+            src="https://www.google.com/maps?q=81+Campbell+Drive,+Izinga+Ridge,+Umhlanga&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Umhlanga Jewish Centre. It's all about community.</p>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
