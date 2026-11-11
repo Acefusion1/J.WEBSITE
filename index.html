@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Umhlanga Jewish Centre | It's all about community</title>
   <meta name="description" content="The Umhlanga Jewish Centre on Izinga Ridge: a Modern Orthodox shul, day school, mikveh and community centre north of Durban. Service times, Shabbat times, events and donations.">
+  <meta name="theme-color" content="#102A43">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Link previews (WhatsApp, Facebook, etc.) -->
+  <!-- TODO: change the URLs below if the live domain is different -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Umhlanga Jewish Centre">
+  <meta property="og:title" content="Umhlanga Jewish Centre | It's all about community">
+  <meta property="og:description" content="A Modern Orthodox shul, day school, mikveh and community centre on Izinga Ridge, Umhlanga. Service times, Shabbat times and events.">
+  <meta property="og:url" content="https://www.umhlangajewishcentre.co.za/">
+  <meta property="og:image" content="https://www.umhlangajewishcentre.co.za/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,13 +40,17 @@
         <span class="brand-text">Umhlanga Jewish Centre</span>
       </a>
 
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
 
       <nav id="site-nav" class="site-nav">
         <a href="#times">Service times</a>
         <a href="#about">About</a>
         <a href="#campus">On campus</a>
-        <a href="#events">Events</a>
+        <a href="#events">Programmes</a>
         <a href="#contact">Visit us</a>
         <a href="#donate" class="btn btn-gold btn-small">Donate</a>
       </nav>
@@ -51,18 +73,18 @@
         </div>
 
         <!-- Live Shabbat card: filled in by js/main.js from Hebcal -->
-        <aside class="shabbat-card" aria-live="polite">
+        <aside class="shabbat-card is-loading" id="shabbat-card" aria-live="polite">
           <p class="shabbat-label">This Shabbat in Umhlanga</p>
-          <p class="shabbat-parsha" id="parsha">Loading…</p>
+          <p class="shabbat-parsha" id="parsha"><span class="skeleton skeleton-title"></span></p>
           <p class="shabbat-hebdate" id="hebdate" lang="he" dir="rtl"></p>
 
           <div class="shabbat-row">
             <span>Candle lighting</span>
-            <strong id="candles">--:--</strong>
+            <strong id="candles"><span class="skeleton skeleton-time"></span></strong>
           </div>
           <div class="shabbat-row">
             <span>Shabbat ends</span>
-            <strong id="havdalah">--:--</strong>
+            <strong id="havdalah"><span class="skeleton skeleton-time"></span></strong>
           </div>
           <p class="shabbat-date" id="shabbat-date"></p>
           <p class="shabbat-note">Times for Umhlanga Ridge, from Hebcal.</p>
@@ -79,22 +101,32 @@
 
         <div class="times-grid">
           <div class="times-block">
-            <h3>Shabbat</h3>
-            <table class="times-table">
-              <tr><td>Friday Mincha &amp; Kabbalat Shabbat</td><td>At candle lighting</td></tr>
-              <tr><td>Shabbat morning Shacharit</td><td>08:30</td></tr>
-              <tr><td>Kiddush</td><td>After the service</td></tr>
-              <tr><td>Mincha, Seuda Shlishit &amp; Maariv</td><td>See newsletter</td></tr>
+            <h3 id="shabbat-times">Shabbat</h3>
+            <table class="times-table" aria-labelledby="shabbat-times">
+              <thead>
+                <tr><th scope="col">Service</th><th scope="col">Time</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Friday Mincha &amp; Kabbalat Shabbat</td><td>At candle lighting</td></tr>
+                <tr><td>Shabbat morning Shacharit</td><td>08:30</td></tr>
+                <tr><td>Kiddush</td><td>After the service</td></tr>
+                <tr><td>Mincha, Seuda Shlishit &amp; Maariv</td><td>See newsletter</td></tr>
+              </tbody>
             </table>
           </div>
 
           <div class="times-block">
-            <h3>Weekdays</h3>
-            <table class="times-table">
-              <tr><td>Sunday Shacharit</td><td>08:00</td></tr>
-              <tr><td>Monday &amp; Thursday Shacharit</td><td>06:45</td></tr>
-              <tr><td>Other weekdays Shacharit</td><td>07:00</td></tr>
-              <tr><td>Mincha &amp; Maariv</td><td>Sunday to Thursday, 17:30</td></tr>
+            <h3 id="weekday-times">Weekdays</h3>
+            <table class="times-table" aria-labelledby="weekday-times">
+              <thead>
+                <tr><th scope="col">Service</th><th scope="col">Time</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Sunday Shacharit</td><td>08:00</td></tr>
+                <tr><td>Monday &amp; Thursday Shacharit</td><td>06:45</td></tr>
+                <tr><td>Other weekdays Shacharit</td><td>07:00</td></tr>
+                <tr><td>Mincha &amp; Maariv</td><td>Sunday to Thursday, 17:30</td></tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -120,6 +152,7 @@
     </section>
 
     <!-- ===== ON CAMPUS ===== -->
+    <!-- Photos: add campus-shul.jpg, campus-school.jpg, campus-mikveh.jpg, campus-library.jpg to images/ (landscape, about 1200x800). Missing photos hide themselves. -->
     <section class="section" id="campus">
       <div class="container">
         <h2>On campus</h2>
@@ -127,18 +160,22 @@
 
         <div class="campus-list">
           <article class="campus-item">
+            <img src="images/campus-shul.jpg" alt="Inside the UJC shul" class="campus-photo" loading="lazy" onerror="this.style.display='none'">
             <h3>The shul</h3>
             <p>Daily minyanim, Shabbat and Yom Tov services, bar and bat mitzvahs, and a kiddush most weeks.</p>
           </article>
           <article class="campus-item">
+            <img src="images/campus-school.jpg" alt="Umhlanga Jewish Day School" class="campus-photo" loading="lazy" onerror="this.style.display='none'">
             <h3>Umhlanga Jewish Day School</h3>
             <p>A primary school offering a warm, holistic Jewish education alongside the national curriculum.</p>
           </article>
           <article class="campus-item">
+            <img src="images/campus-mikveh.jpg" alt="Leah Masinter Mikveh" class="campus-photo" loading="lazy" onerror="this.style.display='none'">
             <h3>Leah Masinter Mikveh</h3>
             <p>Private appointments by arrangement. Phone the mikveh line on <a href="tel:+27823252821">082 325 2821</a>.</p>
           </article>
           <article class="campus-item">
+            <img src="images/campus-library.jpg" alt="The Beit Midrash and library" class="campus-photo" loading="lazy" onerror="this.style.display='none'">
             <h3>Beit Midrash &amp; library</h3>
             <p>A quiet space for shiurim, chavruta learning and the Walter and Lilly Wellisch library.</p>
           </article>
@@ -147,34 +184,44 @@
     </section>
 
     <!-- ===== EVENTS ===== -->
-    <!-- TODO: replace these with real upcoming events from Mandy / the newsletter -->
+    <!-- Regular programmes instead of dated events, so this never goes stale.
+         TODO: confirm these with Mandy. One-off events go in the newsletter. -->
     <section class="section section-sand" id="events">
       <div class="container">
-        <h2>Coming up</h2>
-        <div class="events-list">
-          <article class="event">
-            <div class="event-date"><span class="event-day">14</span><span class="event-month">Nov</span></div>
-            <div>
-              <h3>Shabbat kiddush lunch</h3>
-              <p>Stay after the service for lunch with the community. Everyone's welcome.</p>
-            </div>
-          </article>
-          <article class="event">
-            <div class="event-date"><span class="event-day">19</span><span class="event-month">Nov</span></div>
-            <div>
-              <h3>Wednesday night shiur</h3>
-              <p>Weekly learning in the Beit Midrash, 19:30. No experience needed.</p>
-            </div>
-          </article>
-          <article class="event">
-            <div class="event-date"><span class="event-day">23</span><span class="event-month">Nov</span></div>
-            <div>
-              <h3>Sunday youth morning</h3>
-              <p>Games, crafts and a Jewish twist for kids aged 6 to 14.</p>
-            </div>
-          </article>
+        <h2>Regular programmes</h2>
+        <p class="section-lead">What happens at the UJC week to week. Special events and festivals are announced in the newsletter.</p>
+
+        <div class="events-layout">
+          <div class="events-list">
+            <article class="event">
+              <div class="event-date"><span class="event-day">Sat</span><span class="event-month">Weekly</span></div>
+              <div>
+                <h3>Shabbat kiddush</h3>
+                <p>Stay after the service and catch up with the community. Everyone's welcome.</p>
+              </div>
+            </article>
+            <article class="event">
+              <div class="event-date"><span class="event-day">Wed</span><span class="event-month">19:30</span></div>
+              <div>
+                <h3>Wednesday night shiur</h3>
+                <p>Weekly learning in the Beit Midrash. No experience needed.</p>
+              </div>
+            </article>
+            <article class="event">
+              <div class="event-date"><span class="event-day">Sun</span><span class="event-month">Mornings</span></div>
+              <div>
+                <h3>Youth programme</h3>
+                <p>Games, crafts and a Jewish twist for kids aged 6 to 14.</p>
+              </div>
+            </article>
+          </div>
+
+          <aside class="newsletter-card">
+            <h3>Get the weekly newsletter</h3>
+            <p>Shabbat times, festival services, simchas and upcoming events, straight to your inbox every week.</p>
+            <a href="mailto:shul@umhlangajewishcentre.co.za?subject=Please%20add%20me%20to%20the%20UJC%20newsletter" class="btn btn-ocean">Subscribe by email</a>
+          </aside>
         </div>
-        <p class="events-more">Get the weekly newsletter by emailing <a href="mailto:shul@umhlangajewishcentre.co.za">shul@umhlangajewishcentre.co.za</a>.</p>
       </div>
     </section>
 
@@ -200,6 +247,7 @@
 
           <div class="donate-option">
             <h3>EFT</h3>
+            <!-- TODO: confirm the exact account holder name with the bank / office -->
             <dl class="bank">
               <div><dt>Bank</dt><dd>ABSA</dd></div>
               <div><dt>Account name</dt><dd>UJC</dd></div>
@@ -210,6 +258,10 @@
             <p class="small">Send proof of payment to <a href="mailto:admin@umhlangajewishcentre.co.za">admin@umhlangajewishcentre.co.za</a>.</p>
           </div>
         </div>
+
+        <!-- TODO: only un-comment this once the office confirms the UJC is a registered PBO that issues Section 18A certificates
+        <p class="tax-note"><strong>Tax-deductible:</strong> The UJC is a registered Public Benefit Organisation. Ask for a Section 18A certificate when you send your proof of payment.</p>
+        -->
       </div>
     </section>
 
@@ -244,9 +296,52 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>Umhlanga Jewish Centre. It's all about community.</p>
-      <p><a href="#top">Back to top</a></p>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name">Umhlanga Jewish Centre</p>
+        <p>It's all about community.</p>
+        <address>
+          81 Campbell Drive, Izinga Ridge<br>
+          Umhlanga Ridge, 4319
+        </address>
+      </div>
+
+      <div>
+        <h3 class="footer-heading">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="#times">Service times</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#campus">On campus</a></li>
+          <li><a href="#events">Programmes</a></li>
+          <li><a href="#donate">Donate</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-heading">Contact</h3>
+        <ul class="footer-links">
+          <li><a href="tel:+27315663227">031 566 3227</a></li>
+          <li><a href="mailto:shul@umhlangajewishcentre.co.za">shul@umhlangajewishcentre.co.za</a></li>
+          <li><a href="mailto:admin@umhlangajewishcentre.co.za">admin@umhlangajewishcentre.co.za</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-heading">Follow us</h3>
+        <ul class="footer-links">
+          <!-- TODO: put the real page links in and remove any the UJC doesn't use -->
+          <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+          <!-- <li><a href="https://wa.me/27XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a></li> needs a cellphone number, not the office landline -->
+          <li><a href="mailto:shul@umhlangajewishcentre.co.za?subject=Please%20add%20me%20to%20the%20UJC%20newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <!-- TODO: add the NPO / PBO number here once confirmed, e.g. "NPO 000-000" -->
+      <p>&copy; <span id="year">2026</span> Umhlanga Jewish Centre. All rights reserved.</p>
+      <p><a href="#top">Back to top &uarr;</a></p>
     </div>
   </footer>
 
