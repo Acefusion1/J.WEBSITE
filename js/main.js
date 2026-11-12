@@ -48,6 +48,14 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
+// ===== Home: hide the "photo needed" note once images/shul.jpg exists =====
+var photoNote = document.getElementById("hero-photo-note");
+if (photoNote) {
+  var shulPhoto = new Image();
+  shulPhoto.onload = function () { photoNote.classList.add("is-hidden"); };
+  shulPhoto.src = "images/shul.jpg";
+}
+
 // ===== Footer year =====
 document.getElementById("year").textContent = new Date().getFullYear();
 

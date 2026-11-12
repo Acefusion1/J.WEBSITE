@@ -23,7 +23,8 @@ Every missing detail is in a gold dashed box. In VS Code, search all files (Ctrl
 Also replace `27000000000` (the WhatsApp number) everywhere with the UJC cellphone number in international format, e.g. 082 123 4567 becomes `27821234567`.
 
 ## Images to add (in `images/`)
-- `logo.png`, `hero.jpg`, `zapper-qr.png`
+- `logo.png`, `zapper-qr.png`
+- `shul.jpg`: photo of the shul, shown faded behind the home page hero (landscape, at least 1600px wide)
 - `campus-shul.jpg`, `campus-school.jpg`, `campus-mikveh.jpg`, `campus-library.jpg`
 - `team-rabbi.jpg` etc. for the About page
 - `gallery/gallery-01.jpg` to `gallery-09.jpg`
