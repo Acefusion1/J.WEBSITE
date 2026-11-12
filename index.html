@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Umhlanga Jewish Centre">
   <meta property="og:title" content="Umhlanga Jewish Centre | It's all about community">
-  <meta property="og:description" content="Modern Orthodox shul, primary school and mikveh in Izinga Ridge, Umhlanga. Davening times, Shabbat times and weekly programmes.">
+  <meta property="og:description" content="Modern Orthodox shul, primary school and mikveh in Izinga Ridge, Umhlanga. Find davening times, this week's Shabbat times, weekly programmes and ways to give.">
   <meta property="og:url" content="https://www.umhlangajewishcentre.co.za/">
   <meta property="og:image" content="https://www.umhlangajewishcentre.co.za/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -32,10 +32,10 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ===== HEADER ===== -->
+  <!-- ===== HEADER (same on every page) ===== -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand">
+      <a href="index.html" class="brand">
         <img src="images/logo.png" alt="Umhlanga Jewish Centre" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
         <span class="brand-text">Umhlanga Jewish Centre</span>
       </a>
@@ -46,13 +46,21 @@
         <span class="bar"></span>
       </button>
 
-      <nav id="site-nav" class="site-nav">
-        <a href="#times">Service times</a>
-        <a href="#about">About</a>
-        <a href="#campus">On campus</a>
-        <a href="#events">Programmes</a>
-        <a href="#contact">Visit us</a>
-        <a href="#donate" class="btn btn-gold btn-small">Donate</a>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html" aria-current="page" class="is-active">Home</a>
+        <a href="about.html">About us</a>
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle" aria-expanded="false" aria-controls="lifecycle-menu">Life cycle <span class="caret" aria-hidden="true"></span></button>
+          <ul class="dropdown-menu" id="lifecycle-menu">
+            <li><a href="lifecycle.html">Overview</a></li>
+            <li><a href="bar-mitzvah.html">Bar Mitzvah</a></li>
+            <li><a href="bat-mitzvah.html">Bat Mitzvah</a></li>
+          </ul>
+        </div>
+        <a href="accommodation.html">Accommodation</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="donate.html" class="btn btn-gold btn-small">Donate</a>
       </nav>
     </div>
   </header>
@@ -63,12 +71,13 @@
     <section class="hero" id="top">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="hero-hebrew" lang="he" dir="rtl">שָׁלוֹם</p>
+          <!-- The shul photo is the faded background of this section: save it as images/shul.jpg -->
+          <p class="info-needed hero-photo-note" id="hero-photo-note"><strong>Info needed:</strong> [Photo of the UJC shul in Izinga: save it as images/shul.jpg and it shows here as a faded background]</p>
           <h1>Davening, learning and community, together on one Umhlanga campus.</h1>
           <p class="hero-lead">We're a Modern Orthodox community in Izinga Ridge, just north of Durban. Whether you live up the road or you're down for the holidays, there's a seat for you at our shul.</p>
           <div class="hero-actions">
             <a href="#times" class="btn btn-gold">See service times</a>
-            <a href="#contact" class="btn btn-ghost">Plan your visit</a>
+            <a href="contact.html" class="btn btn-ghost">Plan your visit</a>
           </div>
         </div>
 
@@ -93,11 +102,11 @@
     </section>
 
     <!-- ===== SERVICE TIMES ===== -->
-    <!-- TODO: confirm every time below with the UJC office before going live -->
     <section class="section" id="times">
       <div class="container">
         <h2>Service times</h2>
         <p class="section-lead">Our regular davening times. Yom Tov times change each year, so we send them out in the weekly newsletter.</p>
+        <div class="info-needed"><strong>Info needed:</strong> [Confirm every time below with the office. Current times are placeholders.]</div>
 
         <div class="times-grid">
           <div class="times-block">
@@ -135,61 +144,25 @@
       </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section class="section section-ocean" id="about">
-      <div class="container about-grid">
-        <div>
-          <h2>Our story</h2>
-          <p>As more Durban families settled north in Umhlanga, the community needed a home closer by. The UJC opened its doors in 2014 with one goal: put the shul, the school and the mikveh side by side, so Jewish life could happen in one place.</p>
-          <p>The shul now holds up to 350 people. On any given day you'll find a morning minyan, kids heading to class and something happening for the youth after school.</p>
-        </div>
-        <dl class="facts">
-          <div><dt>2014</dt><dd>Year the centre opened</dd></div>
-          <div><dt>350</dt><dd>Seats in the shul</dd></div>
-          <div><dt>Nusach Ashkenaz</dt><dd>Modern Orthodox</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- ===== ON CAMPUS ===== -->
-    <!-- Photos: add campus-shul.jpg, campus-school.jpg, campus-mikveh.jpg, campus-library.jpg to images/ (landscape, about 1200x800). Missing photos hide themselves. -->
-    <section class="section" id="campus">
+    <!-- ===== FIND YOUR WAY ===== -->
+    <section class="section section-ocean">
       <div class="container">
-        <h2>On campus</h2>
-        <p class="section-lead">One address for all of it: 81 Campbell Drive.</p>
-
-        <div class="campus-list">
-          <article class="campus-item">
-            <div class="photo-frame"><img src="images/campus-shul.jpg" alt="Inside the UJC shul" class="campus-photo" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
-            <h3>The shul</h3>
-            <p>Where we daven every day, celebrate Shabbat and Yom Tov, and mark bar and bat mitzvahs together.</p>
-          </article>
-          <article class="campus-item">
-            <div class="photo-frame"><img src="images/campus-school.jpg" alt="Umhlanga Jewish Day School" class="campus-photo" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
-            <h3>Umhlanga Jewish Day School</h3>
-            <p>A primary school where children follow the national curriculum and grow up with Jewish learning and values.</p>
-          </article>
-          <article class="campus-item">
-            <div class="photo-frame"><img src="images/campus-mikveh.jpg" alt="Leah Masinter Mikveh" class="campus-photo" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
-            <h3>Leah Masinter Mikveh</h3>
-            <p>Visits are private and by appointment only. To book, call <a href="tel:+27823252821">082 325 2821</a>.</p>
-          </article>
-          <article class="campus-item">
-            <div class="photo-frame"><img src="images/campus-library.jpg" alt="The Beit Midrash and library" class="campus-photo" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
-            <h3>Beit Midrash &amp; library</h3>
-            <p>Home to the Walter and Lilly Wellisch library, with room for shiurim and learning with a chavruta.</p>
-          </article>
-        </div>
+        <h2>How can we help?</h2>
+        <ul class="quick-links">
+          <li><a href="bar-mitzvah.html"><span class="ql-title">Book a Bar Mitzvah</span><span class="ql-text">Dates, lessons and the kiddush</span></a></li>
+          <li><a href="bat-mitzvah.html"><span class="ql-title">Book a Bat Mitzvah</span><span class="ql-text">Celebrating our daughters at 12</span></a></li>
+          <li><a href="accommodation.html"><span class="ql-title">Staying for Shabbat?</span><span class="ql-text">Places to stay within walking distance</span></a></li>
+          <li><a href="lifecycle.html"><span class="ql-title">Births, weddings and loss</span><span class="ql-text">We're with you at every stage</span></a></li>
+        </ul>
       </div>
     </section>
 
-    <!-- ===== EVENTS ===== -->
-    <!-- Regular programmes instead of dated events, so this never goes stale.
-         TODO: confirm these with Mandy. One-off events go in the newsletter. -->
+    <!-- ===== PROGRAMMES ===== -->
     <section class="section section-sand" id="events">
       <div class="container">
         <h2>Regular programmes</h2>
         <p class="section-lead">The things you can count on every week. Once-off events and festival plans go out in the newsletter.</p>
+        <div class="info-needed"><strong>Info needed:</strong> [Confirm these programmes and their times with Mandy]</div>
 
         <div class="events-layout">
           <div class="events-list">
@@ -225,79 +198,9 @@
       </div>
     </section>
 
-    <!-- ===== DONATE ===== -->
-    <section class="section" id="donate">
-      <div class="container">
-        <h2>Support the UJC</h2>
-        <p class="section-lead">Every rand helps keep the shul, school and mikveh open for Jewish families across KZN. Give whichever way is easiest for you.</p>
-
-        <div class="donate-grid">
-          <div class="donate-option">
-            <h3>Zapper</h3>
-            <img src="images/zapper-qr.png" alt="Zapper QR code to donate to the UJC" class="qr" onerror="this.style.display='none'">
-            <p>Scan the QR code with your banking app, or tap the button if you're on your phone.</p>
-            <a href="https://www.zapper.com/url/QQfQaALHHk" class="btn btn-ocean" target="_blank" rel="noopener">Donate with Zapper</a>
-          </div>
-
-          <div class="donate-option">
-            <h3>Card</h3>
-            <p>Give with a credit or debit card through Yoco's secure checkout.</p>
-            <a href="https://pay.yoco.com/UmhlangaJewishCentre" class="btn btn-ocean" target="_blank" rel="noopener">Donate by card</a>
-          </div>
-
-          <div class="donate-option">
-            <h3>EFT</h3>
-            <!-- TODO: confirm the exact account holder name with the bank / office -->
-            <dl class="bank">
-              <div><dt>Bank</dt><dd>ABSA</dd></div>
-              <div><dt>Account name</dt><dd>UJC</dd></div>
-              <div><dt>Account number</dt><dd>4078573039</dd></div>
-              <div><dt>Branch code</dt><dd>630326</dd></div>
-              <div><dt>Reference</dt><dd>Your name and the appeal</dd></div>
-            </dl>
-            <p class="small">Send proof of payment to <a href="mailto:admin@umhlangajewishcentre.co.za">admin@umhlangajewishcentre.co.za</a>.</p>
-          </div>
-        </div>
-
-        <!-- TODO: only un-comment this once the office confirms the UJC is a registered PBO that issues Section 18A certificates
-        <p class="tax-note"><strong>Tax-deductible:</strong> The UJC is a registered Public Benefit Organisation. Ask for a Section 18A certificate when you send your proof of payment.</p>
-        -->
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section class="section section-ocean" id="contact">
-      <div class="container contact-grid">
-        <div>
-          <h2>Visit us</h2>
-          <address class="address-big">
-            81 Campbell Drive
-            <span>Izinga Ridge, Umhlanga Ridge, 4319</span>
-          </address>
-          <div class="contact-actions">
-            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=81+Campbell+Drive,+Izinga+Ridge,+Umhlanga" class="btn btn-gold" target="_blank" rel="noopener">Get directions</a>
-            <a href="tel:+27315663227" class="btn btn-ghost">Call the office</a>
-          </div>
-          <ul class="contact-list">
-            <li><span>Office</span> <a href="tel:+27315663227">031 566 3227</a></li>
-            <li><span>Mikveh</span> <a href="tel:+27823252821">082 325 2821</a></li>
-            <li><span>Email</span> <a href="mailto:shul@umhlangajewishcentre.co.za">shul@umhlangajewishcentre.co.za</a></li>
-          </ul>
-          <p class="small">Coming for Shabbat? Contact the office by Thursday and we'll help you sort out meals and somewhere to stay nearby.</p>
-        </div>
-        <div class="map">
-          <iframe
-            title="Map showing the Umhlanga Jewish Centre"
-            src="https://www.google.com/maps?q=81+Campbell+Drive,+Izinga+Ridge,+Umhlanga&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ===== FOOTER (same on every page) ===== -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -312,11 +215,13 @@
       <div>
         <h3 class="footer-heading">Explore</h3>
         <ul class="footer-links">
-          <li><a href="#times">Service times</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#campus">On campus</a></li>
-          <li><a href="#events">Programmes</a></li>
-          <li><a href="#donate">Donate</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="lifecycle.html">Life cycle</a></li>
+          <li><a href="bar-mitzvah.html">Bar Mitzvah</a></li>
+          <li><a href="bat-mitzvah.html">Bat Mitzvah</a></li>
+          <li><a href="accommodation.html">Accommodation</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="donate.html">Donate</a></li>
         </ul>
       </div>
 
@@ -326,6 +231,7 @@
           <li><a href="tel:+27315663227">031 566 3227</a></li>
           <li><a href="mailto:shul@umhlangajewishcentre.co.za">shul@umhlangajewishcentre.co.za</a></li>
           <li><a href="mailto:admin@umhlangajewishcentre.co.za">admin@umhlangajewishcentre.co.za</a></li>
+          <li><a href="contact.html">Contact page</a></li>
         </ul>
       </div>
 
@@ -335,7 +241,7 @@
           <!-- TODO: put the real page links in and remove any the UJC doesn't use -->
           <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
           <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-          <!-- <li><a href="https://wa.me/27XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a></li> needs a cellphone number, not the office landline -->
+          <li><a href="https://wa.me/27000000000" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="mailto:shul@umhlangajewishcentre.co.za?subject=Please%20add%20me%20to%20the%20UJC%20newsletter">Newsletter</a></li>
         </ul>
       </div>
@@ -344,9 +250,16 @@
     <div class="container footer-bottom">
       <!-- TODO: add the NPO / PBO number here once confirmed, e.g. "NPO 000-000" -->
       <p>&copy; <span id="year">2026</span> Umhlanga Jewish Centre. All rights reserved.</p>
-      <p><a href="#top">Back to top &uarr;</a></p>
+      <p><a href="#main">Back to top &uarr;</a></p>
     </div>
   </footer>
+
+  <!-- ===== WhatsApp bubble (every page) =====
+       TODO: replace 27000000000 with the UJC WhatsApp number in international format,
+       no + or spaces, e.g. 082 123 4567 becomes 27821234567. Must be a cellphone, not the landline. -->
+  <a href="https://wa.me/27000000000?text=Hi%20UJC%2C%20I%20have%20a%20question" class="whatsapp-bubble" target="_blank" rel="noopener" aria-label="Chat to us on WhatsApp">
+    <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.43 9.43 0 0 1-4.8-1.31l-.35-.21-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44 2.52 0 4.89.99 6.67 2.77a9.37 9.37 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.44 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.04.7C5.77.7.67 5.8.67 12.06c0 2 .52 3.96 1.52 5.68L.57 23.65l6.04-1.58a11.33 11.33 0 0 0 5.43 1.38h.01c6.27 0 11.37-5.1 11.37-11.37 0-3.04-1.18-5.89-3.34-8.04z"/></svg>
+  </a>
 
   <!-- Sticky call / directions bar, phones only -->
   <nav class="action-bar" aria-label="Quick actions">
