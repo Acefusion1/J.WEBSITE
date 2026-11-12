@@ -544,3 +544,12 @@ address { font-style: normal; font-size: 1.2rem; margin: 1rem 0 1.5rem; color: #
   .quick-links li + li { border-left: 0; }
   .quick-links li + li a { padding-left: 0; }
 }
+
+/* ===== Accommodation ===== */
+.stay-list { display: grid; gap: 1.25rem; }
+.stay { display: grid; grid-template-columns: 260px 1fr; gap: 1.75rem; align-items: start; background: var(--salt); padding: 1.25rem; border-radius: var(--radius-lg); }
+.stay-photo { aspect-ratio: 4 / 3; background: var(--sand); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; padding: 0.75rem; }
+.stay-photo .info-needed { margin: 0; }
+.stay-meta { color: var(--ocean); font-weight: 600; margin-bottom: 0.25rem; }
+@media (max-width: 700px) { .stay { grid-template-columns: 1fr; } }
+h2 + .life-list { margin-top: 1.75rem; }

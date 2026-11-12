@@ -10,6 +10,7 @@ Plain HTML, CSS and JS. Open the folder in VS Code and preview with the Live Ser
 | `lifecycle.html` | Life cycle overview (births, bar/bat mitzvah, weddings, bereavement) |
 | `bar-mitzvah.html` | Bar Mitzvah booking info (under the Life cycle dropdown) |
 | `bat-mitzvah.html` | Bat Mitzvah booking info (under the Life cycle dropdown) |
+| `accommodation.html` | Places to stay near the shul, Shabbat meals, kosher food |
 | `gallery.html` | Photo gallery (tap a photo to enlarge) |
 | `donate.html` | Zapper, card and EFT |
 | `contact.html` | Address, numbers, map, office hours |
