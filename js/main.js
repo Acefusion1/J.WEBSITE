@@ -16,90 +16,110 @@ toggle.addEventListener("click", function () {
   toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
 });
 
-// Close the menu after tapping a link
-var navLinks = nav.querySelectorAll("a");
-for (var i = 0; i < navLinks.length; i++) {
-  navLinks[i].addEventListener("click", closeMenu);
+// ===== Life cycle dropdown =====
+var dropdown = document.querySelector(".nav-dropdown");
+var dropdownButton = document.querySelector(".dropdown-toggle");
+
+function setDropdown(isOpen) {
+  dropdown.classList.toggle("open", isOpen);
+  dropdownButton.setAttribute("aria-expanded", isOpen);
 }
 
-// Close the menu when tapping outside it, or pressing Escape
+// On a computer, also open it when the mouse hovers over it
+var canHover = window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 1001px)");
+
+dropdownButton.addEventListener("click", function () {
+  // With a mouse the hover already opened it, so a click keeps it open
+  if (canHover.matches) setDropdown(true);
+  else setDropdown(!dropdown.classList.contains("open"));
+});
+dropdown.addEventListener("mouseenter", function () { if (canHover.matches) setDropdown(true); });
+dropdown.addEventListener("mouseleave", function () { if (canHover.matches) setDropdown(false); });
+
+// Close menu and dropdown when tapping outside, or pressing Escape
 document.addEventListener("click", function (e) {
   if (!nav.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+  if (!dropdown.contains(e.target)) setDropdown(false);
 });
 document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") closeMenu();
-});
-
-// ===== Highlight the menu link for the section on screen =====
-if ("IntersectionObserver" in window) {
-  var observer = new IntersectionObserver(function (entries) {
-    for (var i = 0; i < entries.length; i++) {
-      if (entries[i].isIntersecting) {
-        var id = entries[i].target.id;
-        for (var j = 0; j < navLinks.length; j++) {
-          var isMatch = navLinks[j].getAttribute("href") === "#" + id;
-          navLinks[j].classList.toggle("is-active", isMatch);
-        }
-      }
-    }
-  }, { rootMargin: "-40% 0px -55% 0px" });
-
-  var sections = document.querySelectorAll("main section[id]");
-  for (var k = 0; k < sections.length; k++) {
-    observer.observe(sections[k]);
+  if (e.key === "Escape") {
+    closeMenu();
+    setDropdown(false);
   }
-}
+});
 
 // ===== Footer year =====
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ===== Live Shabbat times from Hebcal (free, no key needed) =====
-// Coordinates for Izinga Ridge, Umhlanga
-var hebcalUrl = "https://www.hebcal.com/shabbat?cfg=json&latitude=-29.7286&longitude=31.0719&tzid=Africa/Johannesburg&M=on&b=18&leyning=off";
+// ===== Gallery lightbox (gallery page only) =====
+var lightbox = document.getElementById("lightbox");
+if (lightbox) {
+  var lightboxImg = document.getElementById("lightbox-img");
+  var lightboxCaption = document.getElementById("lightbox-caption");
+  var galleryButtons = document.querySelectorAll(".gallery-open");
+
+  for (var g = 0; g < galleryButtons.length; g++) {
+    galleryButtons[g].addEventListener("click", function () {
+      // Don't open a lightbox for a photo that hasn't been added yet
+      if (this.closest(".gallery-item").classList.contains("is-missing")) return;
+      lightboxImg.src = this.getAttribute("data-src");
+      lightboxImg.alt = this.getAttribute("data-caption");
+      lightboxCaption.textContent = this.getAttribute("data-caption");
+      lightbox.showModal();
+    });
+  }
+
+  lightbox.querySelector(".lightbox-close").addEventListener("click", function () { lightbox.close(); });
+  // Close when tapping the dark background
+  lightbox.addEventListener("click", function (e) { if (e.target === lightbox) lightbox.close(); });
+}
+
+// ===== Live Shabbat times from Hebcal (home page only) =====
 var card = document.getElementById("shabbat-card");
+if (card) {
+  // Coordinates for Izinga Ridge, Umhlanga
+  var hebcalUrl = "https://www.hebcal.com/shabbat?cfg=json&latitude=-29.7286&longitude=31.0719&tzid=Africa/Johannesburg&M=on&b=18&leyning=off";
 
-function formatTime(isoString) {
-  var d = new Date(isoString);
-  return d.toLocaleTimeString("en-ZA", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Africa/Johannesburg" });
-}
+  var formatTime = function (isoString) {
+    return new Date(isoString).toLocaleTimeString("en-ZA", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Africa/Johannesburg" });
+  };
+  var formatDate = function (isoString) {
+    return new Date(isoString).toLocaleDateString("en-ZA", { weekday: "long", day: "numeric", month: "long", timeZone: "Africa/Johannesburg" });
+  };
 
-function formatDate(isoString) {
-  var d = new Date(isoString);
-  return d.toLocaleDateString("en-ZA", { weekday: "long", day: "numeric", month: "long", timeZone: "Africa/Johannesburg" });
-}
+  fetch(hebcalUrl)
+    .then(function (response) { return response.json(); })
+    .then(function (data) {
+      var candles = null;
+      var havdalah = null;
+      var parsha = null;
 
-fetch(hebcalUrl)
-  .then(function (response) { return response.json(); })
-  .then(function (data) {
-    var candles = null;
-    var havdalah = null;
-    var parsha = null;
+      for (var i = 0; i < data.items.length; i++) {
+        var item = data.items[i];
+        if (item.category === "candles" && !candles) candles = item;
+        if (item.category === "havdalah" && !havdalah) havdalah = item;
+        if (item.category === "parashat" && !parsha) parsha = item;
+      }
 
-    for (var i = 0; i < data.items.length; i++) {
-      var item = data.items[i];
-      if (item.category === "candles" && !candles) candles = item;
-      if (item.category === "havdalah" && !havdalah) havdalah = item;
-      if (item.category === "parashat" && !parsha) parsha = item;
-    }
+      if (parsha) {
+        document.getElementById("parsha").textContent = parsha.title;
+        document.getElementById("hebdate").textContent = parsha.hebrew;
+      } else {
+        document.getElementById("parsha").textContent = "Shabbat Shalom";
+      }
 
-    if (parsha) {
-      document.getElementById("parsha").textContent = parsha.title;
-      document.getElementById("hebdate").textContent = parsha.hebrew;
-    } else {
+      document.getElementById("candles").textContent = candles ? formatTime(candles.date) : "--:--";
+      document.getElementById("havdalah").textContent = havdalah ? formatTime(havdalah.date) : "--:--";
+      if (candles) {
+        document.getElementById("shabbat-date").textContent = "Friday candle lighting: " + formatDate(candles.date);
+      }
+      card.classList.remove("is-loading");
+    })
+    .catch(function () {
       document.getElementById("parsha").textContent = "Shabbat Shalom";
-    }
-
-    document.getElementById("candles").textContent = candles ? formatTime(candles.date) : "--:--";
-    document.getElementById("havdalah").textContent = havdalah ? formatTime(havdalah.date) : "--:--";
-    if (candles) {
-      document.getElementById("shabbat-date").textContent = "Friday candle lighting: " + formatDate(candles.date);
-    }
-    card.classList.remove("is-loading");
-  })
-  .catch(function () {
-    document.getElementById("parsha").textContent = "Shabbat Shalom";
-    document.getElementById("candles").textContent = "--:--";
-    document.getElementById("havdalah").textContent = "--:--";
-    document.getElementById("shabbat-date").textContent = "Times couldn't load. Phone the office on 031 566 3227.";
-    card.classList.remove("is-loading");
-  });
+      document.getElementById("candles").textContent = "--:--";
+      document.getElementById("havdalah").textContent = "--:--";
+      document.getElementById("shabbat-date").textContent = "Times couldn't load. Phone the office on 031 566 3227.";
+      card.classList.remove("is-loading");
+    });
+}
