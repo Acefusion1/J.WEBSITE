@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="UJC logo">
+  <circle cx="32" cy="32" r="31" fill="#102A43"/>
+  <circle cx="32" cy="32" r="27.5" fill="none" stroke="#E3C877" stroke-width="1.2" opacity="0.6"/>
+  <g fill="none" stroke="#E3C877" stroke-width="3" stroke-linejoin="round">
+    <path d="M32 13 L47 39 L17 39 Z"/>
+    <path d="M32 47 L17 21 L47 21 Z"/>
+  </g>
+  <path d="M14 49 C20 45.5 25 52.5 32 49 C39 45.5 44 52.5 50 49" fill="none" stroke="#7FB8C9" stroke-width="2.6" stroke-linecap="round"/>
+</svg>
