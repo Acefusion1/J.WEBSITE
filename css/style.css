@@ -557,12 +557,12 @@ h2 + .life-list { margin-top: 1.75rem; }
 /* ===== Hero: shul photo shows through a see-through navy layer ===== */
 .hero {
   background:
-    linear-gradient(100deg, rgba(16,42,67,0.92) 0%, rgba(16,42,67,0.78) 45%, rgba(16,42,67,0.45) 100%),
+    linear-gradient(100deg, rgba(16,42,67,0.80) 0%, rgba(16,42,67,0.55) 45%, rgba(16,42,67,0.20) 100%),
     url("../images/shul.jpg") center / cover no-repeat,
     var(--ink);
 }
 .hero-photo-note { margin: 0 0 1.5rem; max-width: 46ch; }
 .hero-photo-note.is-hidden { display: none; }
 @media (max-width: 900px) {
-  .hero { background: linear-gradient(rgba(16,42,67,0.82), rgba(16,42,67,0.82)), url("../images/shul.jpg") center / cover no-repeat, var(--ink); }
+  .hero { background: linear-gradient(rgba(16,42,67,0.65), rgba(16,42,67,0.65)), url("../images/shul.jpg") center / cover no-repeat, var(--ink); }
 }
