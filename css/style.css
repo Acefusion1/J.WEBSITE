@@ -574,3 +574,28 @@ h2 + .life-list { margin-top: 1.75rem; }
 .bio-box { background: #fff; border: 1px solid rgba(16,42,67,0.1); border-left: 3px solid var(--gold); border-radius: var(--radius); padding: 0.85rem 1rem; }
 .bio-label { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ocean); margin-bottom: 0.3rem; }
 .bio-box p { margin: 0; font-size: 0.95rem; line-height: 1.55; color: var(--text); }
+
+/* ===== Hero Shabbat card: frosted glass so the shul shows through ===== */
+.hero .shabbat-card {
+  background: rgba(16, 42, 67, 0.38);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-top: 4px solid var(--gold-light);
+  color: #fff;
+  box-shadow: 0 30px 60px rgba(5, 20, 35, 0.3);
+}
+.hero .shabbat-card .shabbat-label { color: var(--gold-light); }
+.hero .shabbat-card .shabbat-parsha,
+.hero .shabbat-card .shabbat-row strong { color: #fff; }
+.hero .shabbat-card .shabbat-hebdate { color: var(--gold-light); }
+.hero .shabbat-card .shabbat-row { border-top-color: rgba(255, 255, 255, 0.2); }
+.hero .shabbat-card .shabbat-date,
+.hero .shabbat-card .shabbat-note,
+.hero .shabbat-card p,
+.hero .shabbat-card span { color: rgba(255, 255, 255, 0.85); }
+.hero .shabbat-card a { color: var(--gold-light); }
+/* Browsers without blur get a darker tint so text stays readable */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .hero .shabbat-card { background: rgba(16, 42, 67, 0.8); }
+}
