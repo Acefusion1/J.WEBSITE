@@ -430,7 +430,7 @@ address { font-style: normal; font-size: 1.2rem; margin: 1rem 0 1.5rem; color: #
 .facts-light dt { color: var(--ink); }
 .facts-light dd { color: var(--muted); }
 
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 1.5rem; }
+.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 1.5rem; }
 .team-photo { aspect-ratio: 4 / 5; background: var(--salt); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; padding: 1rem; margin-bottom: 1rem; }
 .team-photo .info-needed { margin: 0; }
 .team-photo.has-photo { padding: 0; overflow: hidden; }
